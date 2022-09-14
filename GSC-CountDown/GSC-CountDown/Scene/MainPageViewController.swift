@@ -12,7 +12,7 @@ final class MainPageViewController: UIViewController {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16.0, weight: .medium)
-        label.text = "9월 16일 오늘은"
+        label.text = "\(Date().monthAndDay) 오늘은"
 
         return label
     }()
