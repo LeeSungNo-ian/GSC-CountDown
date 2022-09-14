@@ -19,7 +19,7 @@ final class MainPageViewController: UIViewController {
     
     private lazy var taskCountLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 38.0, weight: .bold)
+        label.font = .systemFont(ofSize: 38.0, weight: .semibold)
         label.text = "0개..."
 
         return label
@@ -78,6 +78,8 @@ final class MainPageViewController: UIViewController {
 
         view.backgroundColor = UIColor(named: "MainBackgroundColor")
         setupLayout()
+        changeTextWeight(label: taskCountLabel)
+        changeTextWeight(label: sloganLabel)
     }
 }
 
@@ -131,6 +133,23 @@ private extension MainPageViewController {
         nextPageButtonLabel.snp.makeConstraints {
             $0.centerX.equalTo(nextPageButton.snp.centerX)
             $0.top.equalTo(nextPageButton.snp.top).offset(28.0)
+        }
+    }
+    
+    func changeTextWeight(label: UILabel) {
+        if label == taskCountLabel {
+            guard let text = label.text else { return }
+            let attributeString = NSMutableAttributedString(string: text)
+            let font = UIFont.systemFont(ofSize: 34.0, weight: .ultraLight)
+            attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: "개..."))
+            taskCountLabel.attributedText = attributeString
+        }
+        else {
+            guard let text = label.text else { return }
+            let attributeString = NSMutableAttributedString(string: text)
+            let font = UIFont.systemFont(ofSize: 34.0, weight: .semibold)
+            attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: "갓생"))
+            sloganLabel.attributedText = attributeString
         }
     }
 }
