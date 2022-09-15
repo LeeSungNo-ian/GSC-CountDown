@@ -34,7 +34,7 @@ final class MainPageViewController: UIViewController {
     
     private lazy var sloganLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 34.0, weight: .ultraLight)
+        label.font = .systemFont(ofSize: 34.0, weight: .semibold)
         label.text = "갓생을 향해 서둘러!"
         
         return label
@@ -86,8 +86,8 @@ final class MainPageViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "MainBackgroundColor")
         setupLayout()
-        changeTextWeight(label: taskCountLabel)
-        changeTextWeight(label: sloganLabel)
+        changeTextWeightSpecificRange(label: taskCountLabel, range: "개...")
+        changeTextWeightSpecificRange(label: sloganLabel, range: "을 향해 서둘러!")
     }
 }
 
@@ -166,20 +166,11 @@ private extension MainPageViewController {
         }
     }
     
-    func changeTextWeight(label: UILabel) {
-        if label == taskCountLabel {
-            guard let text = label.text else { return }
-            let attributeString = NSMutableAttributedString(string: text)
-            let font = UIFont.systemFont(ofSize: 34.0, weight: .ultraLight)
-            attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: "개..."))
-            taskCountLabel.attributedText = attributeString
-        }
-        else {
-            guard let text = label.text else { return }
-            let attributeString = NSMutableAttributedString(string: text)
-            let font = UIFont.systemFont(ofSize: 34.0, weight: .semibold)
-            attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: "갓생"))
-            sloganLabel.attributedText = attributeString
-        }
+    func changeTextWeightSpecificRange(label: UILabel, range: String) {
+        guard let text = label.text else { return }
+        let attributeString = NSMutableAttributedString(string: text)
+        let font = UIFont.systemFont(ofSize: 34.0, weight: .ultraLight)
+        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: range))
+        label.attributedText = attributeString
     }
 }
