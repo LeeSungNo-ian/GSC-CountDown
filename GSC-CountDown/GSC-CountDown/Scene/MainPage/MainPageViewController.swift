@@ -115,9 +115,11 @@ private extension MainPageViewController {
     func setupLayout() {
         [dateLabel, highlightUnderline, taskCountLabel, sloganLabel, separator, taskTableView, nextPageButton, nextPageButtonLabel].forEach { view.addSubview($0) }
         
+        let leadingTrailingInset: CGFloat = 30.0
+
         dateLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(30.0)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(30.0)
+            $0.leading.equalToSuperview().inset(leadingTrailingInset)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(leadingTrailingInset)
         }
         
         taskCountLabel.snp.makeConstraints {
@@ -139,14 +141,14 @@ private extension MainPageViewController {
         
         separator.snp.makeConstraints {
             $0.leading.equalTo(sloganLabel)
-            $0.trailing.equalToSuperview().offset(-30.0)
+            $0.trailing.equalToSuperview().offset(-leadingTrailingInset)
             $0.top.equalTo(sloganLabel.snp.bottom).offset(18.0)
             $0.height.equalTo(0.5)
         }
         
         taskTableView.snp.makeConstraints {
             $0.leading.equalTo(separator)
-            $0.trailing.equalToSuperview().offset(-30.0)
+            $0.trailing.equalToSuperview().offset(-leadingTrailingInset)
             $0.top.equalTo(separator.snp.bottom).offset(18.0)
             $0.bottom.equalToSuperview().offset(-350.0)
         }
