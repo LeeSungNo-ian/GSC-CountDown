@@ -14,6 +14,7 @@
 		0AF9B1C628D20ACC009C0367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF9B1C428D20ACC009C0367 /* LaunchScreen.storyboard */; };
 		0AF9B1CF28D2143B009C0367 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0AF9B1CE28D2143B009C0367 /* SnapKit */; };
 		0AF9B1D428D26185009C0367 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF9B1D328D26185009C0367 /* Date.swift */; };
+		0AF9B1D628D263EC009C0367 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF9B1D528D263EC009C0367 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0AF9B1C528D20ACC009C0367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AF9B1C728D20ACC009C0367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AF9B1D328D26185009C0367 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		0AF9B1D528D263EC009C0367 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A7E0C5528D330F1009ADAE6 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				0AF9B1BD28D20ACA009C0367 /* MainPageViewController.swift */,
+				0AF9B1D528D263EC009C0367 /* TaskTableViewCell.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
 		0AF9B1AD28D20ACA009C0367 = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +83,7 @@
 		0AF9B1D028D26168009C0367 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				0AF9B1BD28D20ACA009C0367 /* MainPageViewController.swift */,
+				0A7E0C5528D330F1009ADAE6 /* MainPage */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -163,6 +174,7 @@
 			files = (
 				0AF9B1BE28D20ACA009C0367 /* MainPageViewController.swift in Sources */,
 				0AF9B1BA28D20ACA009C0367 /* AppDelegate.swift in Sources */,
+				0AF9B1D628D263EC009C0367 /* TaskTableViewCell.swift in Sources */,
 				0AF9B1BC28D20ACA009C0367 /* SceneDelegate.swift in Sources */,
 				0AF9B1D428D26185009C0367 /* Date.swift in Sources */,
 			);
