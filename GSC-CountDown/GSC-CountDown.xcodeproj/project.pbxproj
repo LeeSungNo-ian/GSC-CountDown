@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A6D3FB028D8A2C7004A597F /* MeasureTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D3FAF28D8A2C7004A597F /* MeasureTaskViewController.swift */; };
+		0A6D3FB028D8A2C7004A597F /* MeasureTaskTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D3FAF28D8A2C7004A597F /* MeasureTaskTimeViewController.swift */; };
+		0A6D3FB428D8ADAA004A597F /* CountDownTaskTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D3FB328D8ADAA004A597F /* CountDownTaskTimeViewController.swift */; };
 		0ADB48D828D5B3D200DABC7B /* InputTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADB48D728D5B3D200DABC7B /* InputTaskViewController.swift */; };
 		0AF9B1BA28D20ACA009C0367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF9B1B928D20ACA009C0367 /* AppDelegate.swift */; };
 		0AF9B1BC28D20ACA009C0367 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF9B1BB28D20ACA009C0367 /* SceneDelegate.swift */; };
@@ -20,7 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A6D3FAF28D8A2C7004A597F /* MeasureTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureTaskViewController.swift; sourceTree = "<group>"; };
+		0A6D3FAF28D8A2C7004A597F /* MeasureTaskTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureTaskTimeViewController.swift; sourceTree = "<group>"; };
+		0A6D3FB328D8ADAA004A597F /* CountDownTaskTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTaskTimeViewController.swift; sourceTree = "<group>"; };
 		0ADB48D728D5B3D200DABC7B /* InputTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTaskViewController.swift; sourceTree = "<group>"; };
 		0AF9B1B628D20ACA009C0367 /* GSC-CountDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GSC-CountDown.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF9B1B928D20ACA009C0367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,9 +50,17 @@
 		0A6D3FAE28D8A289004A597F /* MeasureTaskTimeScene */ = {
 			isa = PBXGroup;
 			children = (
-				0A6D3FAF28D8A2C7004A597F /* MeasureTaskViewController.swift */,
+				0A6D3FAF28D8A2C7004A597F /* MeasureTaskTimeViewController.swift */,
 			);
 			path = MeasureTaskTimeScene;
+			sourceTree = "<group>";
+		};
+		0A6D3FB228D8AD16004A597F /* CountDownTaskTimeScene */ = {
+			isa = PBXGroup;
+			children = (
+				0A6D3FB328D8ADAA004A597F /* CountDownTaskTimeViewController.swift */,
+			);
+			path = CountDownTaskTimeScene;
 			sourceTree = "<group>";
 		};
 		0A7E0C5528D330F1009ADAE6 /* MainPageScene */ = {
@@ -106,6 +116,7 @@
 				0A7E0C5528D330F1009ADAE6 /* MainPageScene */,
 				0ADB48D628D5B35700DABC7B /* InoutTaskScene */,
 				0A6D3FAE28D8A289004A597F /* MeasureTaskTimeScene */,
+				0A6D3FB228D8AD16004A597F /* CountDownTaskTimeScene */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -195,7 +206,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ADB48D828D5B3D200DABC7B /* InputTaskViewController.swift in Sources */,
-				0A6D3FB028D8A2C7004A597F /* MeasureTaskViewController.swift in Sources */,
+				0A6D3FB028D8A2C7004A597F /* MeasureTaskTimeViewController.swift in Sources */,
+				0A6D3FB428D8ADAA004A597F /* CountDownTaskTimeViewController.swift in Sources */,
 				0AF9B1BE28D20ACA009C0367 /* MainPageViewController.swift in Sources */,
 				0AF9B1BA28D20ACA009C0367 /* AppDelegate.swift in Sources */,
 				0AF9B1D628D263EC009C0367 /* TaskTableViewCell.swift in Sources */,

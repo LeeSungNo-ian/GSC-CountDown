@@ -53,7 +53,7 @@ final class InputTaskViewController: UIViewController {
     }()
     
     @objc func tapPushButton() {
-        let viewController = MeasureTaskViewController()
+        let viewController = MeasureTaskTimeViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -79,7 +79,7 @@ private extension InputTaskViewController {
 
         dateLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(leadingTrailingInset)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(48)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(48.0)
         }
         
         taskQuestionLabel.snp.makeConstraints {

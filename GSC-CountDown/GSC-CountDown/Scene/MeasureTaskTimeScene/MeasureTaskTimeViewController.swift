@@ -1,5 +1,5 @@
 //
-//  MeasureTaskViewController.swift
+//  MeasureTaskTimeViewController.swift
 //  GSC-CountDown
 //
 //  Created by 이성노 on 2022/09/19.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class MeasureTaskViewController: UIViewController {
+final class MeasureTaskTimeViewController: UIViewController {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16.0, weight: .light)
@@ -44,9 +44,15 @@ final class MeasureTaskViewController: UIViewController {
         button.setTitle("다음", for: .normal)
         button.setTitleColor(UIColor(named: "PantoneColor") ,for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .light)
+        button.addTarget(self, action: #selector(tapPushButton), for: .touchUpInside)
         
         return button
     }()
+    
+    @objc func tapPushButton() {
+        let viewController = CountDownTaskTimeViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +63,7 @@ final class MeasureTaskViewController: UIViewController {
     }
 }
 
-private extension MeasureTaskViewController {
+private extension MeasureTaskTimeViewController {
     func setupNavigationController() {
         self.navigationController?.navigationBar.tintColor = UIColor(named: "PantoneColor")
         self.navigationController?.navigationBar.topItem?.title = ""
@@ -70,7 +76,7 @@ private extension MeasureTaskViewController {
 
         dateLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(leadingTrailingInset)
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(48)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(48.0)
         }
         
         taskQuestionLabel.snp.makeConstraints {
