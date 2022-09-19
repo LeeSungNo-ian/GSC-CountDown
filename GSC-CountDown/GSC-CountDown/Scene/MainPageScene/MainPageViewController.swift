@@ -68,9 +68,15 @@ final class MainPageViewController: UIViewController {
         button.setTitleColor(.white ,for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
         button.backgroundColor = UIColor(named: "PantoneColor")
+        button.addTarget(self, action: #selector(tapPushButton), for: .touchUpInside)
         
         return button
     }()
+    
+    @objc func tapPushButton() {
+        let viewController = InputTaskViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     private lazy var nextPageButtonLabel: UILabel = {
         let label = UILabel()
@@ -115,7 +121,7 @@ private extension MainPageViewController {
     func setupLayout() {
         [dateLabel, highlightUnderline, taskCountLabel, sloganLabel, separator, taskTableView, nextPageButton, nextPageButtonLabel].forEach { view.addSubview($0) }
         
-        let leadingTrailingInset: CGFloat = 30.0
+        let leadingTrailingInset: CGFloat = 24.0
 
         dateLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(leadingTrailingInset)
