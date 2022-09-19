@@ -156,7 +156,7 @@ private extension MainPageViewController {
             $0.leading.equalTo(separator)
             $0.trailing.equalToSuperview().offset(-leadingTrailingInset)
             $0.top.equalTo(separator.snp.bottom).offset(18.0)
-            $0.bottom.equalToSuperview().offset(-350.0)
+            $0.height.equalTo(200)
         }
         
         nextPageButton.snp.makeConstraints {
