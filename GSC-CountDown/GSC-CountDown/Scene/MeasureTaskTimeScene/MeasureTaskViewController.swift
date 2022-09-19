@@ -53,6 +53,7 @@ final class MeasureTaskViewController: UIViewController {
         
         setupLayout()
         setupNavigationController()
+        changeTextWeightSpecificRange(label: taskQuestionLabel, range: "능률의 극대화")
     }
 }
 
@@ -95,5 +96,13 @@ private extension MeasureTaskViewController {
             $0.trailing.equalToSuperview()
             $0.top.equalTo(separator.snp.bottom).offset(32.0)
         }
+    }
+    
+    func changeTextWeightSpecificRange(label: UILabel, range: String) {
+        guard let text = label.text else { return }
+        let attributeString = NSMutableAttributedString(string: text)
+        let font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
+        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: range))
+        label.attributedText = attributeString
     }
 }
