@@ -1,14 +1,14 @@
 //
-//  InputTaskViewController.swift
+//  MeasureTaskViewController.swift
 //  GSC-CountDown
 //
-//  Created by 이성노 on 2022/09/17.
+//  Created by 이성노 on 2022/09/19.
 //
 
 import UIKit
 import SnapKit
 
-final class InputTaskViewController: UIViewController {
+final class MeasureTaskViewController: UIViewController {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16.0, weight: .light)
@@ -20,19 +20,16 @@ final class InputTaskViewController: UIViewController {
     private lazy var taskQuestionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16.0, weight: .light)
-        label.text = "갓생을 향해 무엇을 하실건가요?"
+        label.text = "능률의 극대화를 위해 몇분안에 해치울까요?"
         
         return label
     }()
-    
-    private lazy var taskTextField: UITextField = {
-        var textField = UITextField()
-        textField.backgroundColor = .white
-        textField.layer.borderColor = UIColor.darkGray.cgColor
-        textField.borderStyle = .roundedRect
-        textField.attributedPlaceholder = NSAttributedString(string: "오늘 할 일을 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .regular)])
+        
+    private lazy var countDownPicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .countDownTimer
 
-        return textField
+        return picker
     }()
     
     private lazy var separator: UIView = {
@@ -47,32 +44,26 @@ final class InputTaskViewController: UIViewController {
         button.setTitle("다음", for: .normal)
         button.setTitleColor(UIColor(named: "PantoneColor") ,for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .light)
-        button.addTarget(self, action: #selector(tapPushButton), for: .touchUpInside)
-
+        
         return button
     }()
     
-    @objc func tapPushButton() {
-        let viewController = MeasureTaskViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupLayout()
         setupNavigationController()
     }
 }
 
-private extension InputTaskViewController {
+private extension MeasureTaskViewController {
     func setupNavigationController() {
         self.navigationController?.navigationBar.tintColor = UIColor(named: "PantoneColor")
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
     func setupLayout() {
-        [dateLabel, taskQuestionLabel, taskTextField, separator, nextPageButton].forEach { view.addSubview($0) }
+        [dateLabel, taskQuestionLabel, countDownPicker, separator, nextPageButton].forEach { view.addSubview($0) }
         
         let leadingTrailingInset: CGFloat = 32.0
 
@@ -86,16 +77,16 @@ private extension InputTaskViewController {
             $0.top.equalTo(dateLabel.snp.bottom).offset(4.0)
         }
         
-        taskTextField.snp.makeConstraints {
+        countDownPicker.snp.makeConstraints {
             $0.leading.equalTo(taskQuestionLabel.snp.leading)
             $0.trailing.equalToSuperview().offset(-leadingTrailingInset)
             $0.top.equalTo(taskQuestionLabel.snp.bottom).offset(24.0)
         }
         
         separator.snp.makeConstraints {
-            $0.leading.equalTo(taskTextField)
+            $0.leading.equalTo(countDownPicker)
             $0.trailing.equalToSuperview().offset(-leadingTrailingInset)
-            $0.top.equalTo(taskTextField.snp.bottom).offset(18.0)
+            $0.top.equalTo(countDownPicker.snp.bottom).offset(18.0)
             $0.height.equalTo(0.5)
         }
         
