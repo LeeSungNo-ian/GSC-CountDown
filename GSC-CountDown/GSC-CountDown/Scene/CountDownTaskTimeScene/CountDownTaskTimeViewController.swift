@@ -109,9 +109,15 @@ final class CountDownTaskTimeViewController: UIViewController {
         button.setTitle("취소", for: .normal)
         button.setTitleColor(UIColor(named: "PantoneColor"), for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
+        button.addTarget(self, action: #selector(tapPopButton), for: .touchUpInside)
 
         return button
     }()
+    
+    @objc func tapPopButton() {
+        let viewController = MainPageViewController()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
     private lazy var toggleButton: UIButton = {
         let button = UIButton()
