@@ -62,7 +62,7 @@ final class InputTaskViewController: UIViewController {
 
         setupLayout()
         setupNavigationController()
-        changeTextWeightSpecificRange(label: taskQuestionLabel, range: "갓생")
+        UILabel().changeTextWeightSemiboldFontSize16(label: taskQuestionLabel, range: "갓생")
     }
 }
 
@@ -105,13 +105,5 @@ private extension InputTaskViewController {
             $0.trailing.equalToSuperview()
             $0.top.equalTo(separator.snp.bottom).offset(32.0)
         }
-    }
-    
-    func changeTextWeightSpecificRange(label: UILabel, range: String) {
-        guard let text = label.text else { return }
-        let attributeString = NSMutableAttributedString(string: text)
-        let font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
-        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: range))
-        label.attributedText = attributeString
     }
 }

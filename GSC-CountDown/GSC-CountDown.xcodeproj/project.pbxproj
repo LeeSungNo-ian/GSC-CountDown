@@ -19,6 +19,7 @@
 		0AF9B1D428D26185009C0367 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF9B1D328D26185009C0367 /* Date.swift */; };
 		0AF9B1D628D263EC009C0367 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF9B1D528D263EC009C0367 /* TaskTableViewCell.swift */; };
 		0AFF1FA328DA1F060038839A /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF1FA228DA1F060038839A /* UIScreen.swift */; };
+		0AFF1FA528DA22920038839A /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF1FA428DA22920038839A /* UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0AF9B1D328D26185009C0367 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		0AF9B1D528D263EC009C0367 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		0AFF1FA228DA1F060038839A /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		0AFF1FA428DA22920038839A /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			children = (
 				0AF9B1D328D26185009C0367 /* Date.swift */,
 				0AFF1FA228DA1F060038839A /* UIScreen.swift */,
+				0AFF1FA428DA22920038839A /* UILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFF1FA528DA22920038839A /* UILabel.swift in Sources */,
 				0ADB48D828D5B3D200DABC7B /* InputTaskViewController.swift in Sources */,
 				0A6D3FB028D8A2C7004A597F /* MeasureTaskTimeViewController.swift in Sources */,
 				0A6D3FB428D8ADAA004A597F /* CountDownTaskTimeViewController.swift in Sources */,

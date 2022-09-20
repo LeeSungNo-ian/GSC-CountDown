@@ -19,6 +19,7 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko") // 한국 지정
         dateFormatter.dateFormat = "E요일"
+        
         return dateFormatter.string(from: self)
     }
 }

@@ -92,8 +92,8 @@ final class MainPageViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "MainBackgroundColor")
         setupLayout()
-        changeTextWeightSpecificRange(label: taskCountLabel, range: "개...")
-        changeTextWeightSpecificRange(label: sloganLabel, range: "을 향해 서둘러!")
+        UILabel().changeTextWeightUltralightFontSize34(label: taskCountLabel, range: "개...")
+        UILabel().changeTextWeightUltralightFontSize34(label: sloganLabel, range: "을 향해 서둘러!")
     }
 }
 
@@ -122,7 +122,7 @@ private extension MainPageViewController {
         [dateLabel, highlightUnderline, taskCountLabel, sloganLabel, separator, taskTableView, nextPageButton, nextPageButtonLabel].forEach { view.addSubview($0) }
         
         let leadingTrailingInset: CGFloat = 24.0
-
+        
         dateLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(leadingTrailingInset)
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(leadingTrailingInset)
@@ -170,13 +170,5 @@ private extension MainPageViewController {
             $0.centerX.equalTo(nextPageButton.snp.centerX)
             $0.top.equalTo(nextPageButton.snp.top).offset(28.0)
         }
-    }
-    
-    func changeTextWeightSpecificRange(label: UILabel, range: String) {
-        guard let text = label.text else { return }
-        let attributeString = NSMutableAttributedString(string: text)
-        let font = UIFont.systemFont(ofSize: 34.0, weight: .ultraLight)
-        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: range))
-        label.attributedText = attributeString
     }
 }

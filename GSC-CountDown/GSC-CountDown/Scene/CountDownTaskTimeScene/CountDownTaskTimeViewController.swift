@@ -127,6 +127,7 @@ final class CountDownTaskTimeViewController: UIViewController {
         
         setupLayout()
         setupNavigationController()
+        UILabel().changeTextWeightUltralightFontSize24(label: mainTaskLabel, range: "(이)가")
     }
 }
 
