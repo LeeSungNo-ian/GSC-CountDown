@@ -214,7 +214,7 @@ private extension CountDownTaskTimeViewController {
         }
         
         buttonStackView.snp.makeConstraints {
-            UIScreen().screenHeight ? $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(100.0) : $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(60.0)
+            UIScreen().noSafeAreaDivice ? $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(100.0) : $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(60.0)
             $0.centerX.equalTo(view)
         }
     }
