@@ -108,7 +108,7 @@ final class CountDownTaskTimeViewController: UIViewController {
         let button = UIButton()
         button.setTitle("취소", for: .normal)
         button.setTitleColor(UIColor(named: "PantoneColor"), for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 14.0, weight: .semibold)
+        button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
 
         return button
     }()
@@ -117,7 +117,7 @@ final class CountDownTaskTimeViewController: UIViewController {
         let button = UIButton()
         button.setTitle("시작", for: .normal)
         button.setTitleColor(UIColor(named: "PantoneColor"), for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 14.0, weight: .semibold)
+        button.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .medium)
 
         return button
     }()
@@ -138,7 +138,7 @@ private extension CountDownTaskTimeViewController {
     
     func setupLayout() {
         let buttonStackView = UIStackView(arrangedSubviews: [cancelButton, toggleButton])
-        buttonStackView.spacing = 150.0
+        buttonStackView.spacing = 160.0
         buttonStackView.distribution = .fillEqually
         
         [increaseTimerStick, hideIncreaseTimerStick, mainTaskLabel, doingTaskLabel, decreaseTimerStick, popMainViewSlider, detailDecreaseTimerStickLine, detailIncreaseTimerStickLine, decreaseTimerLabel, increaseTimerLabel, buttonStackView].forEach { view.addSubview($0) }
@@ -206,7 +206,7 @@ private extension CountDownTaskTimeViewController {
         }
         
         buttonStackView.snp.makeConstraints {
-            $0.bottom.equalTo(view).inset(100.0)
+            UIScreen().screenHeight ? $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(100.0) : $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(60.0)
             $0.centerX.equalTo(view)
         }
     }
