@@ -57,6 +57,7 @@ final class MeasureTaskTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         setupLayout()
         setupNavigationController()
         UILabel().changeTextWeightSemiboldFontSize16(label: taskQuestionLabel, range: "능률의 극대화")

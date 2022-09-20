@@ -60,6 +60,7 @@ final class InputTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .white
         setupLayout()
         setupNavigationController()
         UILabel().changeTextWeightSemiboldFontSize16(label: taskQuestionLabel, range: "갓생")

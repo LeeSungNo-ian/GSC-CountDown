@@ -131,6 +131,7 @@ final class CountDownTaskTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         setupLayout()
         setupNavigationController()
         UILabel().changeTextWeightUltralightFontSize24(label: mainTaskLabel, range: "(이)가")
