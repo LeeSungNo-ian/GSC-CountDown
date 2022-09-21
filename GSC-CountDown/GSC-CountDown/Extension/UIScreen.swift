@@ -8,5 +8,5 @@
 import UIKit
 
 extension UIScreen {
-    var noSafeAreaDivice: Bool { UIScreen.main.bounds.size.height >= 844 }
+    var safeAreaDivice: Bool { UIScreen.main.bounds.size.height >= 844 }
 }
