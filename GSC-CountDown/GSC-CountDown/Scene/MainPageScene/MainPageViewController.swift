@@ -92,8 +92,8 @@ final class MainPageViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "MainBackgroundColor")
         setupLayout()
-        UILabel().changeTextWeightUltralightFontSize34(label: taskCountLabel, range: "개...")
-        UILabel().changeTextWeightUltralightFontSize34(label: sloganLabel, range: "을 향해 서둘러!")
+        UILabel().changeTextWeightSpecificRange(label: taskCountLabel, fontSize: 38.0, fontWeight: UIFont.Weight.ultraLight, range: "개...")
+        UILabel().changeTextWeightSpecificRange(label: sloganLabel, fontSize: 34.0, fontWeight: UIFont.Weight.ultraLight, range: "을 향해 서둘러!")
     }
 }
 

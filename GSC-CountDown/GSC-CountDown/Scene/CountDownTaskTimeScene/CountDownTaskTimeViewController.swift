@@ -134,7 +134,7 @@ final class CountDownTaskTimeViewController: UIViewController {
         view.backgroundColor = .white
         setupLayout()
         setupNavigationController()
-        UILabel().changeTextWeightUltralightFontSize24(label: mainTaskLabel, range: "(이)가")
+        UILabel().changeTextWeightSpecificRange(label: mainTaskLabel, fontSize: 24.0, fontWeight: UIFont.Weight.ultraLight, range: "(이)가")
     }
 }
 

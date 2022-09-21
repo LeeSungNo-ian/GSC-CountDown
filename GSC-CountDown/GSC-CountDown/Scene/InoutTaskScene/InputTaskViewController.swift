@@ -63,7 +63,7 @@ final class InputTaskViewController: UIViewController {
         view.backgroundColor = .white
         setupLayout()
         setupNavigationController()
-        UILabel().changeTextWeightSemiboldFontSize16(label: taskQuestionLabel, range: "갓생")
+        UILabel().changeTextWeightSpecificRange(label: taskQuestionLabel, fontSize: 16.0, fontWeight: UIFont.Weight.semibold, range: "갓생")
     }
 }
 
