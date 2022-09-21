@@ -68,9 +68,15 @@ final class MainPageViewController: UIViewController {
         button.setTitleColor(.white ,for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20.0, weight: .medium)
         button.backgroundColor = UIColor(named: "PantoneColor")
+        button.addTarget(self, action: #selector(tapPushButton), for: .touchUpInside)
         
         return button
     }()
+    
+    @objc func tapPushButton() {
+        let viewController = InputTaskViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
     
     private lazy var nextPageButtonLabel: UILabel = {
         let label = UILabel()
@@ -86,8 +92,8 @@ final class MainPageViewController: UIViewController {
         
         view.backgroundColor = UIColor(named: "MainBackgroundColor")
         setupLayout()
-        changeTextWeightSpecificRange(label: taskCountLabel, range: "개...")
-        changeTextWeightSpecificRange(label: sloganLabel, range: "을 향해 서둘러!")
+        UILabel().changeTextWeightSpecificRange(label: taskCountLabel, fontSize: 38.0, fontWeight: UIFont.Weight.ultraLight, range: "개...")
+        UILabel().changeTextWeightSpecificRange(label: sloganLabel, fontSize: 34.0, fontWeight: UIFont.Weight.ultraLight, range: "을 향해 서둘러!")
     }
 }
 
@@ -115,8 +121,8 @@ private extension MainPageViewController {
     func setupLayout() {
         [dateLabel, highlightUnderline, taskCountLabel, sloganLabel, separator, taskTableView, nextPageButton, nextPageButtonLabel].forEach { view.addSubview($0) }
         
-        let leadingTrailingInset: CGFloat = 30.0
-
+        let leadingTrailingInset: CGFloat = 24.0
+        
         dateLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(leadingTrailingInset)
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(leadingTrailingInset)
@@ -150,7 +156,7 @@ private extension MainPageViewController {
             $0.leading.equalTo(separator)
             $0.trailing.equalToSuperview().offset(-leadingTrailingInset)
             $0.top.equalTo(separator.snp.bottom).offset(18.0)
-            $0.bottom.equalToSuperview().offset(-350.0)
+            $0.height.equalTo(200)
         }
         
         nextPageButton.snp.makeConstraints {
@@ -164,13 +170,5 @@ private extension MainPageViewController {
             $0.centerX.equalTo(nextPageButton.snp.centerX)
             $0.top.equalTo(nextPageButton.snp.top).offset(28.0)
         }
-    }
-    
-    func changeTextWeightSpecificRange(label: UILabel, range: String) {
-        guard let text = label.text else { return }
-        let attributeString = NSMutableAttributedString(string: text)
-        let font = UIFont.systemFont(ofSize: 34.0, weight: .ultraLight)
-        attributeString.addAttribute(.font, value: font, range: (text as NSString).range(of: range))
-        label.attributedText = attributeString
     }
 }
