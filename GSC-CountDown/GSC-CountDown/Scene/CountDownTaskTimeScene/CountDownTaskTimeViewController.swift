@@ -186,7 +186,7 @@ private extension CountDownTaskTimeViewController {
             $0.centerX.equalTo(decreaseTimerStick)
             $0.centerY.equalTo(decreaseTimerStick)
             $0.leading.equalTo(decreaseTimerStick.snp.leading).offset(20.0)
-            $0.trailing.equalTo(decreaseTimerStick.snp.trailing).offset(-20.0)
+            $0.trailing.equalTo(decreaseTimerStick.snp.trailing).inset(20.0)
         }
         
         decreaseTimerLabel.snp.makeConstraints {
@@ -196,7 +196,7 @@ private extension CountDownTaskTimeViewController {
         
         increaseTimerLabel.snp.makeConstraints {
             $0.centerX.equalTo(increaseTimerStick)
-            $0.bottom.equalTo(increaseTimerStick.snp.bottom).offset(-80.0)
+            $0.bottom.equalTo(increaseTimerStick.snp.bottom).inset(80.0)
         }
         
         detailDecreaseTimerStickLine.snp.makeConstraints {
@@ -207,7 +207,7 @@ private extension CountDownTaskTimeViewController {
         }
         
         detailIncreaseTimerStickLine.snp.makeConstraints {
-            $0.bottom.equalTo(increaseTimerStick.snp.bottom).offset(-24.0)
+            $0.bottom.equalTo(increaseTimerStick.snp.bottom).inset(24.0)
             $0.centerX.equalTo(increaseTimerStick)
             $0.height.equalTo(0.5)
             $0.width.equalTo(20.0)
